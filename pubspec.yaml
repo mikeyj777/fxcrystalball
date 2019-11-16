@@ -1,0 +1,30 @@
+name: fx_crystal_ball
+description: A new Flutter application.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.2
+  firebase_core: ^0.4.1+3
+  firebase_auth: ^0.14.0+8
+  cloud_firestore: ^0.12.10
+  modal_progress_hud: ^0.1.3
+  font_awesome_flutter: ^8.5.0
+  http: ^0.11.3+16
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+  - images/
