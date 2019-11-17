@@ -83,28 +83,23 @@ class PredictModel {
     final startoftime = DateTime(1899,12,30);
     final numdays = dateformodel.difference(startoftime).inDays;
 
-    double mIn = 1;
-    double bIn = 0;
 
-    double mOut = 1;
-    double bOut = 0;
+    double predfrom = 1;
+    double predto = 1;
 
     if (currFrom != 'USD') {
       var currIn = modelfit[currFrom];
-      mIn = currIn['m'];
-      bIn = currIn['b'];
+      var mIn = currIn['m'];
+      var bIn = currIn['b'];
+      predfrom = mIn * numdays + bIn;
     }
     
     if (currTo != 'USD') {
       var currOut = modelfit[currTo];
-      mOut = currOut['m'];
-      bOut = currOut['b'];
+      var mOut = currOut['m'];
+      var bOut = currOut['b'];
+      predto = mOut * numdays + bOut;
     }
-
-    double mypredicted = 0;
-    double predfrom = mIn * numdays + bIn;
-    double predto = mOut * numdays + bOut;
-
     double exrate = predto / predfrom;
     
     //float predstr = exrate.toStringAsFixed(exrate.truncateToDouble() == exrate ? 0 : 2);
